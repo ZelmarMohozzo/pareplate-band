@@ -37,7 +37,7 @@ export function Hero() {
           <img 
             src="/images/pareplate-logo.png" 
             alt="PAREPLATE" 
-            className="w-full max-w-[300px] md:max-w-[500px] lg:max-w-[700px] h-auto mx-auto"
+            className="w-full max-w-[400px] md:max-w-[700px] lg:max-w-[1000px] h-auto mx-auto"
             style={{
               filter: 'drop-shadow(0 0 30px rgba(255,255,255,0.1)) drop-shadow(0 0 60px rgba(139,0,0,0.2))'
             }}
