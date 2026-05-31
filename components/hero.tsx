@@ -18,17 +18,17 @@ export function Hero() {
         loop
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
-        style={{ filter: 'grayscale(100%) contrast(1.1)' }}
+        style={{ filter: 'contrast(1.1) brightness(0.9)' }}
       >
         <source src="/videos/background.mp4" type="video/mp4" />
       </video>
 
       {/* Dark overlay on video */}
-      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-black/40" />
 
-      {/* Background texture - dark grungy */}
+      {/* Background texture - subtle grain */}
       <div 
-        className="absolute inset-0 opacity-20 z-[1]"
+        className="absolute inset-0 opacity-[0.06] z-[1] mix-blend-overlay"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
         }}
@@ -38,12 +38,12 @@ export function Hero() {
       <div 
         className="absolute inset-0 pointer-events-none z-[2]" 
         style={{
-          background: 'radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.95) 100%)'
+          background: 'radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.85) 100%)'
         }}
       />
       
       {/* Animated background scratches */}
-      <div className="absolute inset-0 scratches opacity-30 z-[3]" />
+      <div className="absolute inset-0 scratches opacity-10 z-[3]" />
       
       {/* Hero content */}
       <div className={`relative z-[10] text-center px-4 transition-all duration-1000 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
