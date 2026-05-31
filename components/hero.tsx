@@ -33,14 +33,16 @@ export function Hero() {
       {/* Hero content */}
       <div className={`relative z-20 text-center px-4 transition-all duration-1000 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         {/* Logo/Band name */}
-        <h1 className="text-dirty glitch">
-          <span className="block text-7xl md:text-[10rem] lg:text-[14rem] font-black tracking-[0.2em] text-white uppercase leading-none">
-            PARE
-          </span>
-          <span className="block text-7xl md:text-[10rem] lg:text-[14rem] font-black tracking-[0.2em] text-white uppercase leading-none -mt-4 md:-mt-8">
-            PLATE
-          </span>
-        </h1>
+        <div className="glitch relative">
+          <img 
+            src="/images/pareplate-logo.png" 
+            alt="PAREPLATE" 
+            className="w-full max-w-[300px] md:max-w-[500px] lg:max-w-[700px] h-auto mx-auto"
+            style={{
+              filter: 'drop-shadow(0 0 30px rgba(255,255,255,0.1)) drop-shadow(0 0 60px rgba(139,0,0,0.2))'
+            }}
+          />
+        </div>
         
         {/* Tagline */}
         <p className="mt-8 text-lg md:text-xl tracking-[0.5em] uppercase text-neutral-400 font-light">
