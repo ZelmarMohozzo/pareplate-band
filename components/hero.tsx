@@ -11,9 +11,24 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden scanlines bg-[#0a0a0a]">
+      {/* Background Video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ filter: 'grayscale(100%) contrast(1.1)' }}
+      >
+        <source src="/videos/background.mp4" type="video/mp4" />
+      </video>
+
+      {/* Dark overlay on video */}
+      <div className="absolute inset-0 bg-black/60" />
+
       {/* Background texture - dark grungy */}
       <div 
-        className="absolute inset-0 opacity-20"
+        className="absolute inset-0 opacity-20 z-[1]"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
         }}
@@ -21,17 +36,17 @@ export function Hero() {
       
       {/* Dark vignette overlay */}
       <div 
-        className="absolute inset-0 pointer-events-none z-10" 
+        className="absolute inset-0 pointer-events-none z-[2]" 
         style={{
-          background: 'radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.9) 100%)'
+          background: 'radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.95) 100%)'
         }}
       />
       
       {/* Animated background scratches */}
-      <div className="absolute inset-0 scratches opacity-30" />
+      <div className="absolute inset-0 scratches opacity-30 z-[3]" />
       
       {/* Hero content */}
-      <div className={`relative z-20 text-center px-4 transition-all duration-1000 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+      <div className={`relative z-[10] text-center px-4 transition-all duration-1000 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         {/* Logo/Band name */}
         <div className="glitch relative">
           <img 
@@ -82,7 +97,7 @@ export function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-[10] animate-bounce">
         <div className="w-6 h-10 border-2 border-neutral-600 rounded-full flex justify-center">
           <div className="w-1 h-3 bg-neutral-600 rounded-full mt-2 animate-pulse" />
         </div>
